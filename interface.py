@@ -32,12 +32,11 @@ def prediction():
         stroke = Obj.get_prediction()
         
         if stroke == 1:
-            show = 'The Patient Suffers from a Stroke'
+            return render_template('stroke_prediction.html', prediction = 'The Patient Suffers from a Stroke')
         elif stroke == 0:
-            show = 'The Patient does not Suffer from a Stroke'
-        
-        return render_template('stroke_prediction.html', prediction = show)
-
+            return render_template('stroke_prediction.html', prediction = 'The Patient does not Suffer from a Stroke')
+           
+            
     elif request.method == 'POST':
         data = request.form
         print("Data :",data)
